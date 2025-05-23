@@ -1,0 +1,41 @@
+﻿@model WebApplicationOdontoPrev.ViewModels.CheckInViewModel
+
+@{
+    ViewBag.Title = "Check-in";
+}
+
+<div class="container">
+    <div class="saudacao text-center mb-4">
+        <p class="display-6">Olá, @Model.NmPaciente</p>
+        <p>Plano: @Model.NmPlano</p>
+    </div>
+
+    <h2 class="text-primary mb-4">Check-In Diário - <strong>@Model.DtCheckIn.ToString("dd/MM/yyyy")</strong></h2>
+
+    <form asp-action="Avancar" asp-controller="CheckIn" method="post" class="mt-4">
+        <div class="mb-3">
+            <label class="form-label"><strong>Pergunta @Model.Contador:</strong> @Model.DsPergunta</label>
+        </div>
+
+        <div class="mb-3">
+            <label for="DsResposta" class="form-label">Sua Resposta:</label>
+            <input type="text" asp-for="DsResposta" class="form-control" />
+        </div>
+
+        <input type="hidden" asp-for="IdPaciente" />
+        <input type="hidden" asp-for="NmPaciente" />
+        <input type="hidden" asp-for="NmPlano" />
+        <input type="hidden" asp-for="DtCheckIn" />
+        <input type="hidden" asp-for="DsPergunta" />
+        <input type="hidden" asp-for="Contador" />
+
+        <div class="d-flex justify-content-between mt-4">
+            <button type="button" class="btn btn-primary btn-lg rounded-pill" onclick="location.href='@Url.Action("Index","PacienteHome", new { id = Model.IdPaciente })'">
+                @(Model.Contador > 1 ? "Voltar/Concluir" : "Cancelar")
+            </button>
+            <button type="submit" class="btn btn-success rounded-pill">
+                Avançar/Concluir
+            </button>
+        </div>
+    </form>
+</div>

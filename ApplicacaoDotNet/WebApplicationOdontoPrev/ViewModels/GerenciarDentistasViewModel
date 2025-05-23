@@ -1,0 +1,10 @@
+﻿using WebApplicationOdontoPrev.Models;
+using System.Collections.Generic;
+
+namespace WebApplicationOdontoPrev.ViewModels
+{
+    public class GerenciarDentistasViewModel
+    {
+        public List<Dentista> Dentistas { get; set; } = new List<Dentista>();
+    }
+}

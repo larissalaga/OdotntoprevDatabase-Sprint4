@@ -1,0 +1,100 @@
+[{
+  "_id": {
+    "$oid": "682fd7b1877b527d4f4b61d2"
+  },
+  "nm_dentista": "Dr. Otto Canino",
+  "ds_cro": "CRO312544",
+  "ds_email": "otto.canino@gmail.com",
+  "nr_telefone": "31932158752",
+  "ds_doc_identificacao": "12579320000127"
+},
+{
+  "_id": {
+    "$oid": "682fd7b1877b527d4f4b61d3"
+  },
+  "nm_dentista": "Dr. Ben Dente",
+  "ds_cro": "CR245565",
+  "ds_email": "ben.dente@gmail.com",
+  "nr_telefone": "62901985212",
+  "ds_doc_identificacao": "16874896000178"
+},
+{
+  "_id": {
+    "$oid": "682fd7b1877b527d4f4b61d4"
+  },
+  "nm_dentista": "Dr. Álvaro Canal",
+  "ds_cro": "CR52865",
+  "ds_email": "alvaro.canal@gmail.com",
+  "nr_telefone": "11999855776",
+  "ds_doc_identificacao": "59225989000184"
+},
+{
+  "_id": {
+    "$oid": "682fd7b1877b527d4f4b61d5"
+  },
+  "nm_dentista": "Dra. Marina Molar",
+  "ds_cro": "CR986422",
+  "ds_email": "marina.molar@gmail.com",
+  "nr_telefone": "11933255774",
+  "ds_doc_identificacao": "93908189000104"
+},
+{
+  "_id": {
+    "$oid": "682fd7b1877b527d4f4b61d6"
+  },
+  "nm_dentista": "Dr. Ali Vramento",
+  "ds_cro": "CR098964",
+  "ds_email": "ali.vramento@gmail.com",
+  "nr_telefone": "45988552211",
+  "ds_doc_identificacao": "75234663000170"
+},
+{
+  "_id": {
+    "$oid": "682fd7b1877b527d4f4b61d7"
+  },
+  "nm_dentista": "Dra. Aparecida do Sorriso",
+  "ds_cro": "CRO99001",
+  "ds_email": "aparecida.sorriso@gmail.com",
+  "nr_telefone": "84966665786",
+  "ds_doc_identificacao": "42526327000141"
+},
+{
+  "_id": {
+    "$oid": "682fd7b1877b527d4f4b61d8"
+  },
+  "nm_dentista": "Dra. Isa Carie",
+  "ds_cro": "CR856934",
+  "ds_email": "isa.carie@gmail.com",
+  "nr_telefone": "11955863320",
+  "ds_doc_identificacao": "07316233000147"
+},
+{
+  "_id": {
+    "$oid": "682fd7b1877b527d4f4b61d9"
+  },
+  "nm_dentista": "Dra. Clara Mente",
+  "ds_cro": "CR125863",
+  "ds_email": "clara.mente@gmail.com",
+  "nr_telefone": "3394563325",
+  "ds_doc_identificacao": "36816900000159"
+},
+{
+  "_id": {
+    "$oid": "682fd7b1877b527d4f4b61da"
+  },
+  "nm_dentista": "Dr. Cláudio Gengiva",
+  "ds_cro": "CRO88990",
+  "ds_email": "claudio.gengiva@gmail.com",
+  "nr_telefone": "2733755886",
+  "ds_doc_identificacao": "46805824000130"
+},
+{
+  "_id": {
+    "$oid": "682fd7b1877b527d4f4b61db"
+  },
+  "nm_dentista": "Dra. Sonia Brilho",
+  "ds_cro": "CR203587",
+  "ds_email": "sonia.brilho@gmail.com",
+  "nr_telefone": "63977523258",
+  "ds_doc_identificacao": "50241419000103"
+}]

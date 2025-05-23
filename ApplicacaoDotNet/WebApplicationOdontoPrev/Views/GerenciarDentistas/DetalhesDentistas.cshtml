@@ -1,0 +1,59 @@
+﻿@model WebApplicationOdontoPrev.Models.Dentista
+
+@{
+    ViewBag.Title = "Editar Dentista";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4 text-primary">Editar Dentista</h2>
+    <form asp-action="SalvarDentista" method="post" class="needs-validation" novalidate>
+        <div class="row g-3">
+            <input asp-for="Id" type="hidden" />
+
+            <!-- Nome -->
+            <div class="col-md-6">
+                <label asp-for="nm_dentista" class="form-label">Nome</label>
+                <input asp-for="nm_dentista" class="form-control" required />
+                <span asp-validation-for="nm_dentista" class="text-danger"></span>
+            </div>
+
+            <!-- CRO -->
+            <div class="col-md-6">
+                <label asp-for="ds_cro" class="form-label">CRO</label>
+                <input asp-for="ds_cro" class="form-control" required />
+                <span asp-validation-for="ds_cro" class="text-danger"></span>
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-6">
+                <label asp-for="ds_email" class="form-label">Email</label>
+                <input asp-for="ds_email" class="form-control" type="email" required />
+                <span asp-validation-for="ds_email" class="text-danger"></span>
+            </div>
+
+            <!-- Telefone -->
+            <div class="col-md-6">
+                <label asp-for="nr_telefone" class="form-label">Telefone</label>
+                <input asp-for="nr_telefone" class="form-control" required />
+                <span asp-validation-for="nr_telefone" class="text-danger"></span>
+            </div>
+
+            <!-- Documento de Identificação -->
+            <div class="col-md-6">
+                <label asp-for="ds_doc_identificacao" class="form-label">Documento de Identificação</label>
+                <input asp-for="ds_doc_identificacao" class="form-control" required />
+                <span asp-validation-for="ds_doc_identificacao" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Botões -->
+        <div class="mt-4 text-center">
+            <button type="submit" class="btn btn-primary btn-lg rounded-pill me-2">Salvar</button>
+            <a asp-action="Index" class="btn btn-secondary btn-lg rounded-pill">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

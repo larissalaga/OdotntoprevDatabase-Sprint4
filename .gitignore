@@ -1,0 +1,26 @@
+# Pastas do Visual Studio
+.vs/
+*.user
+*.suo
+
+# Pastas de build do .NET
+bin/
+obj/
+
+# Snapshots do Copilot (onde deu o erro)
+CopilotSnapshots/
+
+# Arquivos de log
+*.log
+
+# Arquivos de configuração locais
+appsettings.Development.json
+appsettings.Local.json
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Sistema
+Thumbs.db
+.DS_Store

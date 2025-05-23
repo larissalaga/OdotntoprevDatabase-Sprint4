@@ -1,0 +1,73 @@
+﻿@model WebApplicationOdontoPrev.ViewModels.GerenciarDentistasViewModel
+
+@{
+    ViewBag.Title = "Gerenciar Dentistas";
+    var sortOrder = TempData["CurrentSortOrder"] as string ?? "asc";
+    var currentField = TempData["CurrentSortField"] as string;
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="display-4 text-primary">Gerenciar Dentistas</h1>
+    </div>
+
+    <!-- Botão para Adicionar Novo Dentista -->
+    <div class="text-end mb-3">
+        <a asp-action="AdicionarDentista" class="btn btn-success btn-lg rounded-pill">
+            <i class="bi bi-person-plus-fill"></i> Adicionar Dentista
+        </a>
+    </div>
+
+    <table class="table table-hover table-bordered table-striped align-middle">
+        <thead style="background-color: #0054A6; color: white;">
+            <tr class="text-center">
+                <th>
+                    <a asp-action="OrdenarDentistas"
+                       asp-route-campo="nm_dentista"
+                       asp-route-sortOrder="@(currentField == "nm_dentista" && sortOrder == "asc" ? "desc" : "asc")"
+                       class="text-white text-decoration-none">
+                        Nome @if (currentField == "nm_dentista")
+                        {
+                            <span>@(sortOrder == "asc" ? "↑" : "↓")</span>
+                        }
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="OrdenarDentistas"
+                       asp-route-campo="ds_cro"
+                       asp-route-sortOrder="@(currentField == "ds_cro" && sortOrder == "asc" ? "desc" : "asc")"
+                       class="text-white text-decoration-none">
+                        CRO @if (currentField == "ds_cro")
+                        {
+                            <span>@(sortOrder == "asc" ? "↑" : "↓")</span>
+                        }
+                    </a>
+                </th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Documento</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dentista in Model.Dentistas)
+            {
+                <tr>
+                    <td>@dentista.nm_dentista</td>
+                    <td>@dentista.ds_cro</td>
+                    <td>@dentista.ds_email</td>
+                    <td>@dentista.nr_telefone</td>
+                    <td>@dentista.ds_doc_identificacao</td>
+                    <td class="text-center">
+                        <a asp-action="EditarDentista" asp-controller="GerenciarDentistas" asp-route-id="@dentista.Id" class="btn btn-primary btn-sm rounded-pill me-1">
+                            <i class="bi bi-pencil"></i> Editar
+                        </a>
+                        <a asp-action="ExcluirDentista" asp-controller="GerenciarDentistas" asp-route-id="@dentista.Id" class="btn btn-warning text-white btn-sm rounded-pill">
+                            <i class="bi bi-trash"></i> Excluir
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

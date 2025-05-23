@@ -1,0 +1,60 @@
+@model WebApplicationOdontoPrev.ViewModels.RaioXAnalisesReportViewModel
+
+@{
+    ViewData["Title"] = "Relatório de Raio X";
+}
+
+<div class="container mt-5">
+    <h1 class="display-4 text-primary mb-3">Relatório de Raio X</h1>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <a class="btn btn-secondary mb-3" href="/Admin/Index">Voltar para Admin</a>
+        </div>
+        <div class="col-md-6 text-right">
+            <form method="get" asp-action="RaioXReport" class="form-inline">
+                <div class="form-group">
+                    <label for="cpf" class="mr-2">Selecione o CPF:</label>
+                    <select id="cpf" name="cpf" class="form-control mr-2">
+                        <option value="">Todos</option>
+                        @foreach (var cpf in Model.nr_cpfs)
+                        {
+                            <option value="@cpf" selected="@(cpf == Context.Request.Query["cpf"].ToString())">@cpf</option>
+                        }
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+            </form>
+        </div>
+    </div>
+
+    <p class="text-muted">Total de análises encontradas: <strong>@Model.raio_x_analises.Count</strong></p>
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Nome do Usuário</th>
+                <th>CPF</th>
+                <th>Data Raio X</th>
+                <th>Descrição</th>
+                <th>Data da Análise</th>
+                <th>Resultado da Análise</th>
+                <th>Nome do Plano</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.raio_x_analises)
+            {
+                <tr>
+                    <td>@item.nm_paciente</td>
+                    <td>@item.nr_cpf</td>
+                    <td>@item.dt_data_raio_x.ToString("dd/MM/yyyy")</td>
+                    <td>@item.ds_raio_x</td>
+                    <td>@item.dt_analise_raio_x.ToString("dd/MM/yyyy")</td>
+                    <td>@item.ds_analise_raio_x</td>
+                    <td>@item.nm_plano</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

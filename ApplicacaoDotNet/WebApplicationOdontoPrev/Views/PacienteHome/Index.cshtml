@@ -1,0 +1,39 @@
+﻿@model WebApplicationOdontoPrev.ViewModels.PacienteHomeViewModel
+
+@{
+    ViewBag.Title = "Paciente Home";
+}
+
+<div class="container d-flex flex-column align-items-center mt-5">
+    <div class="saudacao text-center mb-4">
+        <p class="display-6">Olá, @Model.nm_paciente</p>
+        <p>Plano: @Model.nm_plano</p>
+        <p>Você tem <strong>@Model.total_pontos</strong> pontos</p>
+    </div>
+
+    <div class="text-center mb-4">
+        <h2 class="text-primary mb-4">Faça o seu check-in diário e aproveite o nosso programa de pontos!</h2>
+
+        <a asp-controller="CheckIn" asp-action="Index" asp-route-id="@Model.id"
+           class="btn btn-primary w-100 mb-5">
+            Fazer Check-In Diário!
+        </a>
+    </div>
+
+    <nav class="navegacao-user text-center mt-4">
+        <a asp-controller="ExtratoPontos" asp-action="Index" asp-route-id="@Model.id"
+           class="btn btn-primary btn-lg rounded-pill">
+            Extrato de Pontos
+        </a>
+
+        <a asp-controller="HistoricoCheckIns" asp-action="Index" asp-route-id="@Model.id"
+           class="btn btn-success btn-lg rounded-pill">
+            Histórico de Check-Ins
+        </a>
+
+        <a asp-controller="GerenciarPacientes" asp-action="Perfil" asp-route-id="@Model.id"
+           class="btn btn-warning text-white btn-lg rounded-pill">
+            Perfil
+        </a>
+    </nav>
+</div>

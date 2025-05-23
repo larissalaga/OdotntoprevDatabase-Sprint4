@@ -1,0 +1,52 @@
+﻿@model WebApplicationOdontoPrev.Models.Dentista
+
+@{
+    ViewBag.Title = "Perfil do Dentista";
+}
+
+<div class="container mt-5">
+    <h2 class="text-primary text-center mb-4">Editar Perfil do Dentista</h2>
+
+    <form asp-action="SalvarPerfilDentista" method="post" class="mt-4">
+        <input asp-for="Id" type="hidden" />
+
+        <div class="mb-3">
+            <label asp-for="nm_dentista" class="form-label">Nome Completo</label>
+            <input asp-for="nm_dentista" class="form-control" />
+            <span asp-validation-for="nm_dentista" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ds_cro" class="form-label">CRO</label>
+            <input asp-for="ds_cro" class="form-control" />
+            <span asp-validation-for="ds_cro" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ds_email" class="form-label">Email</label>
+            <input asp-for="ds_email" type="email" class="form-control" />
+            <span asp-validation-for="ds_email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="nr_telefone" class="form-label">Telefone</label>
+            <input asp-for="nr_telefone" type="tel" class="form-control" />
+            <span asp-validation-for="nr_telefone" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ds_doc_identificacao" class="form-label">Documento de Identificação</label>
+            <input asp-for="ds_doc_identificacao" class="form-control" />
+            <span asp-validation-for="ds_doc_identificacao" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100 mb-5">Salvar Alterações</button>
+    </form>
+
+    <nav class="navegacao-user text-center mt-4">
+        <a asp-controller="DentistaHome" asp-action="Index" asp-route-id="@Model.Id"
+           class="btn btn-primary btn-lg rounded-pill">
+            Página Inicial
+        </a>
+    </nav>
+</div>
